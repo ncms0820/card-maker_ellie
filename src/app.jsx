@@ -1,15 +1,11 @@
-import "./app.css";
+import styles from "./app.module.css";
+import Login from "./components/login/login";
 
-function App() {
+function App({ authService }) {
   return (
-    <>
-      <form>
-        <label>
-          Enter your name:
-          <input type="text" />
-        </label>
-      </form>
-    </>
+    <div className={styles.app}>
+      <Login authService={authService} />;
+    </div>
   );
 }
 
