@@ -1,7 +1,16 @@
 import "./app.css";
 
 function App() {
-  return <h1>Hello :)</h1>;
+  return (
+    <>
+      <form>
+        <label>
+          Enter your name:
+          <input type="text" />
+        </label>
+      </form>
+    </>
+  );
 }
 
 export default App;
