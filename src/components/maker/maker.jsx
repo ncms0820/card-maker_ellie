@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Editor from "../editor/editor";
 import Footer from "../footer/footer";
@@ -11,9 +11,9 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
   const navigateState = useLocation().state;
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(navigateState && navigateState.id);
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout();
-  };
+  }, [authService]);
   const createOrupdateCard = (card) => {
     setCards((cards) => {
       const updated = { ...cards };
